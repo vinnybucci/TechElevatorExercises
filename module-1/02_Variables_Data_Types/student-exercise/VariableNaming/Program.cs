@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Transactions;
 
 namespace VariableNaming
 {
@@ -15,6 +16,7 @@ namespace VariableNaming
             int initialNumberOfBirds = 4;
             int birdsThatFlewAway = 1;
             int remainingNumberOfBirds = initialNumberOfBirds - birdsThatFlewAway;
+            Console.WriteLine(remainingNumberOfBirds);
 
             /*
             2. There are 6 birds and 3 nests. How many more birds are there than
@@ -25,6 +27,7 @@ namespace VariableNaming
             int numberOfBirds = 6;
             int numberOfNests = 3;
             int numberOfExtraBirds = numberOfBirds - numberOfNests;
+            Console.WriteLine(numberOfExtraBirds);
 
 
 
@@ -32,98 +35,161 @@ namespace VariableNaming
             3. 3 raccoons are playing in the woods. 2 go home to eat dinner. How
             many raccoons are left in the woods?
             */
-
+            int initialNumberOfRaccoons = 3;
+            int raccoonsHomeForDinner = 2;
+            int raccoonsLeftInTheWoods = initialNumberOfRaccoons - raccoonsHomeForDinner;
+            Console.WriteLine(raccoonsLeftInTheWoods);
             /*
-            4. There are 5 flowers and 3 bees. How many less bees than flowers?
-            */
-
+           4. There are 5 flowers and 3 bees. How many less bees than flowers?
+           */
+            int numberOfFlowers = 5;
+            int numberOfBees = 3;
+            int amountOfBees = numberOfFlowers -numberOfBees;
+            Console.WriteLine(amountOfBees);
             /*
             5. 1 lonely pigeon was eating breadcrumbs. Another pigeon came to eat
             breadcrumbs, too. How many pigeons are eating breadcrumbs now?
             */
-
+            int lonelyPigeon = 1;
+            int pigeonJoiningToEat = 1;
+            int totalPigeonsEating = lonelyPigeon + pigeonJoiningToEat;
+            Console.WriteLine(totalPigeonsEating);
             /*
             6. 3 owls were sitting on the fence. 2 more owls joined them. How many
             owls are on the fence now?
             */
-
+            int owlsSittingOnFence = 3;
+            int owlsJoiningTheFence = 2;
+            int totalOwlsSittingOnFence = owlsSittingOnFence + owlsJoiningTheFence;
+            Console.WriteLine(totalOwlsSittingOnFence);
             /*
             7. 2 beavers were working on their home. 1 went for a swim. How many
             beavers are still working on their home?
             */
-
+            int beaversWorking = 2;
+            int beaversGoingForASwim = 1;
+            int beaversWorkingOnHome = beaversWorking - beaversGoingForASwim;
+            Console.WriteLine(beaversWorkingOnHome);
             /*
             8. 2 toucans are sitting on a tree limb. 1 more toucan joins them. How
             many toucans in all?
             */
-
+            int toucansSitting = 2;
+            int toucansJoining = 1;
+            int totalToucans = toucansSitting + toucansJoining;
+            Console.WriteLine(totalToucans);
             /*
             9. There are 4 squirrels in a tree with 2 nuts. How many more squirrels
             are there than nuts?
             */
-
+            int squirrelsInTree = 4;
+            int nutsInTree = 2;
+            int totalSquirrels = squirrelsInTree - nutsInTree;
+            Console.WriteLine(totalSquirrels);
             /*
             10. Mrs. Hilt found a quarter, 1 dime, and 2 nickels. How much money did
             she find?
             */
-
+            double hiltQuarter = .25;
+            double hiltDime = .10;
+            double hiltNickle = .05;
+            double hiltMoney = hiltQuarter + hiltDime + (hiltNickle * 2);
+            Console.WriteLine(hiltMoney);
             /*
             11. Mrs. Hilt's favorite first grade classes are baking muffins. Mrs. Brier's
             class bakes 18 muffins, Mrs. MacAdams's class bakes 20 muffins, and
             Mrs. Flannery's class bakes 17 muffins. How many muffins does first
             grade bake in all?
             */
-
+            int brierMuffins = 18;
+            int macadamsMuffins = 20;
+            int flanneryMuffins = 17;
+            int totalMuffinsFirstGrade = brierMuffins + macadamsMuffins + flanneryMuffins;
+            Console.WriteLine(totalMuffinsFirstGrade);
             /*
             12. Mrs. Hilt bought a yoyo for 24 cents and a whistle for 14 cents. How
             much did she spend in all for the two toys?
             */
-
+            double hiltYoyo = .24;
+            double hiltWhistle = .14;
+            double hiltTotalMoneySpent = hiltYoyo + hiltWhistle;
+            Console.WriteLine(hiltTotalMoneySpent);
             /*
             13. Mrs. Hilt made 5 Rice Krispie Treats. She used 8 large marshmallows
             and 10 mini marshmallows.How many marshmallows did she use
             altogether?
             */
-
+            int hiltLargeMarshmallows = 8;
+            int hiltSmallMarshmallows = 10;
+            int totalMarshmallows = hiltSmallMarshmallows + hiltLargeMarshmallows;
+            Console.WriteLine(totalMarshmallows);
             /*
             14. At Mrs. Hilt's house, there was 29 inches of snow, and Brecknock
             Elementary School received 17 inches of snow. How much more snow
             did Mrs. Hilt's house have?
             */
-
+            int hiltHouseSnow = 29;
+            int hiltBrecknockSnow = 17;
+            int snowForHiltHouse = hiltHouseSnow - hiltBrecknockSnow;
+            Console.WriteLine(snowForHiltHouse);
             /*
             15. Mrs. Hilt has $10. She spends $3 on a toy truck and $2 on a pencil
             case. How much money does she have left?
             */
-
+            int hiltStartingMoney = 10;
+            int hiltToyTruck = 3;
+            int hiltPencil = 2;
+            int hiltRemainingMoney = hiltStartingMoney - hiltToyTruck - hiltPencil;
+            Console.WriteLine(hiltRemainingMoney);
             /*
             16. Josh had 16 marbles in his collection. He lost 7 marbles. How many
             marbles does he have now?
             */
-
+            int marbleCollection = 16;
+            int marblesLost = 7;
+            int totalmarblecollection = marbleCollection - marblesLost;
+            Console.WriteLine(totalmarblecollection);
             /*
             17. Megan has 19 seashells. How many more seashells does she need to
             find to have 25 seashells in her collection?
             */
-
+            int meganSeashells = 19;
+            int goalSeashellsMegan = 25;
+            int meganNeedsToFind = goalSeashellsMegan - meganSeashells;
+            Console.WriteLine(meganNeedsToFind);
             /*
             18. Brad has 17 balloons. 8 balloons are red and the rest are green. How
             many green balloons does Brad have?
             */
-
+            int bradBallonsTotal = 17;
+            int bradRedBalloons = 8;
+            int bradGreenBalloons = bradBallonsTotal - bradRedBalloons;
+            Console.WriteLine(bradGreenBalloons);
             /*
             19. There are 38 books on the shelf. Marta put 10 more books on the shelf.
             How many books are on the shelf now?
             */
-
+            int startingBooksOnShelf = 38;
+            int booksMartaPutOnShelf = 10;
+            int totalBooksOnShelf = startingBooksOnShelf + booksMartaPutOnShelf;
+            Console.WriteLine(totalBooksOnShelf);
             /*
             20. A bee has 6 legs. How many legs do 8 bees have?
             */
+            int numberOfLegsOnBee = 6;
+            int numberPerBee = 8;
+            int numberOfBeeLegs = numberOfLegsOnBee * numberPerBee;
+            Console.WriteLine(numberOfBeeLegs);
+
 
             /*
             21. Mrs. Hilt bought an ice cream cone for 99 cents. How much would 2 ice
             cream cones cost?
             */
+            double hiltIceCreamConeCost = .99;
+            double hiltTwoIceCreamCone = 2;
+            double hiltTotalCost = hiltTwoIceCreamCone * hiltIceCreamConeCost;
+            Console.WriteLine(hiltTotalCost);
 
             /*
             22. Mrs. Hilt wants to make a border around her garden. She needs 125
