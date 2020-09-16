@@ -28,6 +28,9 @@ namespace Exercises
          */
         public string YourCakeAndEatItToo(double mealAmount, bool isBirthday)
         {
+            double birthdayCake = (double)mealAmount + 5;
+            if (mealAmount <= 10)
+                return "";
             return "";
         }
     }

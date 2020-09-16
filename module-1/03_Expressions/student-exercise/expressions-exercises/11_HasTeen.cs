@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -17,8 +18,22 @@ namespace Exercises
         */
         public bool HasTeen(int a, int b, int c)
         {
-            return false;
+            if ((a >= 13) && (a <= 19) || (b >= 13) && (b <= 19) || (c >= 13) && (c <= 19))
+            {
+                return true;
+            }
+            else if ((a < 13) && (b < 13) && (c < 13))
+            {
+                return false;
+            }
+            else if ((a > 19) && (b > 19) && (c > 19))
+            {
+                return false;
+            }
+            else
+            {
+                return false;
+            }
         }
-
     }
 }
