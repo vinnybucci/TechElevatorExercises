@@ -30,7 +30,13 @@ namespace Exercises
         {
             double birthdayCake = (double)mealAmount + 5;
             if (mealAmount <= 10)
-                return "";
+            {
+                return "standard";
+            }
+            if (mealAmount <=15 )
+            {
+                return "special"; 
+            }
             return "";
         }
     }
