@@ -17,7 +17,11 @@ namespace Exercises
          */
         public string Left2(string str)
         {
-            return null;
+            string result;
+            string firstChar = str.Substring(0, 2);
+            string move = str.Substring(2);
+            result = move + firstChar;
+            return result;
         }
     }
 }

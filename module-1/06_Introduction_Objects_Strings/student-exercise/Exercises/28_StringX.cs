@@ -17,7 +17,15 @@ namespace Exercises
         */
         public string StringX(string str)
         {
-            return null;
+            for (int i =1;i<str.Length-1;i++)
+            {
+                if (str[i]=='x')
+                {
+                    str = str.Remove(i, 1);
+                    i--;
+                }
+            }
+            return str;
         }
     }
 }

@@ -16,6 +16,15 @@ namespace Exercises
          */
         public bool DoubleX(string str)
         {
+            int result;
+            result = str.IndexOf('x');
+            if (result+1 <str.Length)
+            {
+                if(str[result+1]=='x')
+                {
+                    return  true;
+                }
+            }
             return false;
         }
     }

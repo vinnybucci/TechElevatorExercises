@@ -17,7 +17,16 @@ namespace Exercises
          */
         public string StringYak(string str)
         {
-            return null;
+            string result = str;
+            for (int i =0;i<result.Length-2;i++)
+            {
+               if (result.Substring(i,3)=="yak")
+                {
+                    result = result.Remove(i, 3);
+                    i--;
+                }
+            }
+            return result;
         }
     }
 }

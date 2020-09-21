@@ -18,7 +18,17 @@ namespace Exercises
         */
         public string ComboString(string a, string b)
         {
-            return null;
+            string result;
+            if (a.Length < b.Length)
+            {
+                result = ($"{a}{b}{a}");
+            }
+            else
+            {
+                result = ($"{b}{a}{b}");
+
+            }
+            return result;
         }
     }
 }

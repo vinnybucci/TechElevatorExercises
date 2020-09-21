@@ -17,7 +17,21 @@ namespace Exercises
          */
         public string WithoutEnd2(string str)
         {
-            return null;
+            string result = str; 
+            if (str.Length==0)
+            {
+                result = "";
+            }
+            else if (str.Length==1)
+            {
+                result = result.Remove(0, 1);
+
+            }
+            else
+            {
+                result = result.Remove(result.Length - 1).Remove(0, 1);
+            }
+            return result;
         }
     }
 }
