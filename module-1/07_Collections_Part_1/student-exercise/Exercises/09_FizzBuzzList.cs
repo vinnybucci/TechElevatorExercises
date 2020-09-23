@@ -22,7 +22,30 @@ namespace Exercises
          */
         public List<string> FizzBuzzList(int[] integerArray)
         {
-            return null;
+            List<string> fizzBuzzList = new List<string>();
+
+            foreach (int value in integerArray)
+            {
+                if (value % 3 == 0 && value % 5 == 0)
+                {
+                    fizzBuzzList.Add("FizzBuzz");
+                }
+
+                else if (value % 5 == 0)
+                {
+                    fizzBuzzList.Add("Buzz");
+                }
+                else if (value % 3 == 0)
+                {
+                    fizzBuzzList.Add("Fizz");
+                }
+
+                else
+                {
+                    fizzBuzzList.Add(value.ToString());
+                }
+            }
+            return fizzBuzzList;
         }
 
     }
