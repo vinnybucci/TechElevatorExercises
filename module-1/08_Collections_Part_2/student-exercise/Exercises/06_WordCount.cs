@@ -22,7 +22,19 @@ namespace Exercises
          */
         public Dictionary<string, int> WordCount(string[] words)
         {
-            return null;
+            Dictionary<string, int> value = new Dictionary<string, int>();
+            foreach(string word in words)
+            {
+                if (!value.ContainsKey(word))
+                {
+                    value[word] = 1;
+                }
+                else
+                {
+                    value[word] = value[word] + 1;
+                }
+            }
+            return value;
         }
     }
 }

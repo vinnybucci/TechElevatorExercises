@@ -19,7 +19,21 @@ namespace Exercises
          */
         public Dictionary<string, int> PeterPaulPartnership(Dictionary<string, int> peterPaul)
         {
-            return null;
+            //peter 50 or more and paul 100 or more divide by .25 so it would be a double at some point, new peterpaulpartnership combining each 
+            double peter;
+            double paul;
+            double peterPaulPartnership;
+            if (peterPaul["Peter"] > 5000 && peterPaul["Paul"] > 10000)
+            {
+                peter = peterPaul["Peter"] * .25;
+                paul = peterPaul["Paul"] * .25;
+                peterPaul["Peter"] -= (int)peter;
+                peterPaul["Paul"] -= (int)paul;
+                peterPaulPartnership = peter + paul;
+                peterPaul["PeterPaulPartnership"] = (int)peterPaulPartnership;
+            }
+                    
+            return peterPaul;
         }
     }
 }
