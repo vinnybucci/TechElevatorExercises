@@ -13,7 +13,7 @@ namespace BankTellerExercise
 
         }
 
-        public new int Withdraw(int amountToWithdraw)
+        public override int Withdraw(int amountToWithdraw)
         {
             // Only allow the withdraw if the balance isn't going to go below -$100
             if (Balance - amountToWithdraw > -100)
