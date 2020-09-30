@@ -44,7 +44,7 @@ namespace AbstractExercise
                         int length = int.Parse(Console.ReadLine());
 
                         //uncomment after step 2:
-                        //newWall = new RectangleWall(name, color, height, length);
+                        newWall = new RectangleWall(name, color, height, length);
                     }
                     else if (shapeChoice == "2")
                     {
@@ -66,8 +66,8 @@ namespace AbstractExercise
                     }
 
                     //uncomment after step 2:
-                    //Console.WriteLine($"Added {newWall} wall - {newWall.GetArea()} square feet");
-                    //walls.Add(newWall);
+                    Console.WriteLine($"Added {newWall} wall - {newWall.GetArea()} square feet");
+                    walls.Add(newWall);
                 }
                 else if (userChoice == "2")
                 {
@@ -75,17 +75,17 @@ namespace AbstractExercise
 
                     int totalArea = 0;
                     //uncomment after step 2:
-                    //for (int i = 0; i < walls.Count; i++)
-                    //{
-                    //    Wall wall = walls[i];
-                    //    int wallArea = wall.GetArea();
+                    for (int i = 0; i < walls.Count; i++)
+                    {
+                        Wall wall = walls[i];
+                        int wallArea = wall.GetArea();
 
-                    //    Console.WriteLine($"Wall {i + 1}: {wall} - {wallArea} square feet");
+                        Console.WriteLine($"Wall {i + 1}: {wall} - {wallArea} square feet");
 
-                    //    totalArea += wallArea;
-                    //    colorChoiceAreas.TryGetValue(wall.Color, out int currentColorArea);
-                    //    colorChoiceAreas[wall.Color] = currentColorArea + wallArea;
-                    //}
+                        totalArea += wallArea;
+                        colorChoiceAreas.TryGetValue(wall.Color, out int currentColorArea);
+                        colorChoiceAreas[wall.Color] = currentColorArea + wallArea;
+                    }
 
                     Console.WriteLine("===============================");
                     Console.WriteLine("Total Area: " + totalArea + " square feet");

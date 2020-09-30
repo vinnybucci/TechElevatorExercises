@@ -4,10 +4,19 @@ using System.Text;
 
 namespace AbstractExercise
 {
-    class SquareWall
+    class SquareWall : RectangleWall
     {
-        //public SquareWall(string name, string color, int sideLength);
-        //ToString()
+        public int SideLength { get; }
+
+        public SquareWall(string name, string color, int sideLength) : base(name, color, sideLength, sideLength)
+        {
+            SideLength = sideLength;
+        }
+
+        public override string ToString()
+        {
+            return $"{Name} ({SideLength}x{SideLength}) square";
+        }
 
     }
 }

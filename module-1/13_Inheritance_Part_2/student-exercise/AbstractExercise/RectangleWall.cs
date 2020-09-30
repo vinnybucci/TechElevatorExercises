@@ -9,26 +9,27 @@ namespace AbstractExercise
         public int Length { get; }
         public int Height { get; }
 
-        public override int GetArea()
+
+        public RectangleWall(string name, string color, int length, int height) : base(name, color)
         {
-            throw new NotImplementedException();
+            Length = length;
+            Height = height;
+
         }
 
-        //  public RectangleWall(string name, string color, int length, int height) 
-        //{
-        //    Length = length;
-        //    Height = height;
 
+        public override int GetArea()
+        {
+            return Length * Height;
+        }
+        public override string ToString()
+        {
+            return $"{Name} ({Length}x{Height}) rectangle";
+        }
 
     }
 
-    //public string ToString()
-    //{
-    //    return;
-    //}
-    //public override int GetArea()
-    //{
-    //    return GetArea(Length*Height);
-    //}
+
+
 }
 
