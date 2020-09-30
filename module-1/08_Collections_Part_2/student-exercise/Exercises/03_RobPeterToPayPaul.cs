@@ -20,19 +20,15 @@ namespace Exercises
          */
         public Dictionary<string, int> RobPeterToPayPaul(Dictionary<string, int> peterPaul)
         {
-            int peter;
+            int peter;  
             int paul;
-            
-            if (peterPaul["Peter"] > 0 && peterPaul["Paul"] <1000)
-            {
-              peter =  peterPaul["Peter"] / 2;
-
-                paul = peterPaul["Paul"] + peter;
-                peterPaul["Paul"] = paul;
-                peterPaul["Peter"] = peter;
-            }
-
-
+            if ( peterPaul["Peter"]>0 && peterPaul["Paul"]<1000)
+                {
+                    peter = peterPaul["Peter"] / 2;
+                    paul = peterPaul["Paul"] + peter;
+                    peterPaul["Paul"] = paul;
+                    peterPaul["Peter"] = peter;
+                }
             return peterPaul;
         }
     }
