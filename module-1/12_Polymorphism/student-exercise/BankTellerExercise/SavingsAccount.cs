@@ -14,16 +14,14 @@ namespace BankTellerExercise
 
         public override int Withdraw(int amountToWithdraw)
         {
-            // only perform transaction of positive $ and room for fee
             if (Balance - amountToWithdraw >= 2)
             {
                 base.Withdraw(amountToWithdraw);
-                // Assess $2 fee if it goes below $150
                 if (Balance < 150)
                 {
                     base.Withdraw(2);
                 }
-            }
+            }   
             return Balance;
         }
     }
