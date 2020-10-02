@@ -24,7 +24,7 @@
             return Balance;
         }
 
-        public decimal Withdraw(decimal amountToWithdraw)
+        public virtual decimal Withdraw(decimal amountToWithdraw)
         {
             // same as Balance = Balance - amountToWithdraw
             Balance -= amountToWithdraw;
