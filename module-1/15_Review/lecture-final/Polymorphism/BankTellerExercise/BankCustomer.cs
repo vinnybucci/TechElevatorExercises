@@ -7,7 +7,6 @@ namespace BankTellerExercise
     public class BankCustomer
     {
         private List<IAccountable> accounts { get; set; } = new List<IAccountable>();
-
         public string Name { get; set; }
         public string Address { get; set; }
         public string PhoneNumber { get; set; }
