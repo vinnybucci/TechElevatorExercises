@@ -94,7 +94,19 @@ namespace Exercises.Tests
             //Assert 
             Assert.AreEqual(expected, result);
         }
+        [TestMethod]
+        public void GetHerdPathNull()
+        {
+            AnimalGroupName animalGroupName = new AnimalGroupName();
+            string expected = "unknown";
+            string input = null;
+            string result = "";
 
+            //Act 
+            result = animalGroupName.GetHerd(input);
+            //Assert 
+            Assert.AreEqual(expected, result);
+        }
 
     }
 }
