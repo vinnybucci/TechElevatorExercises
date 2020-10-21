@@ -10,9 +10,9 @@ namespace ProjectOrganizer
         static void Main(string[] args)
         {
 
-            IProjectDAO projectDAO = null;
-            IEmployeeDAO employeeDAO = null;
-            IDepartmentDAO departmentDAO = null;
+            IProjectDAO projectDAO = new ProjectSqlDAO(@"Data Source =.\SQLEXPRESS; Initial Catalog = EmployeeDB; Integrated Security = True");
+            IEmployeeDAO employeeDAO = new EmployeeSqlDAO(@"Data Source =.\SQLEXPRESS; Initial Catalog = EmployeeDB; Integrated Security = True");
+            IDepartmentDAO departmentDAO = new DepartmentSqlDAO (@"Data Source =.\SQLEXPRESS; Initial Catalog = EmployeeDB; Integrated Security = True");
 
             ProjectCLI projectCLI = new ProjectCLI(employeeDAO, projectDAO, departmentDAO);
             projectCLI.RunCLI();
