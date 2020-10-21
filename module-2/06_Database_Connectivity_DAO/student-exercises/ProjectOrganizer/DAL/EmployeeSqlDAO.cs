@@ -73,7 +73,7 @@ namespace ProjectOrganizer.DAL
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-                    SqlCommand sqlCommand = new SqlCommand("Select * from employee", conn);
+                    SqlCommand sqlCommand = new SqlCommand($"Select * from employee Where first_name ='{ firstname }' and last_name = '{ lastname}' ;",conn);
                     sqlCommand.Parameters.AddWithValue("@firstname", "%" + firstname + "%");
                     sqlCommand.Parameters.AddWithValue("@lastname", "%" + lastname + "%");
 
