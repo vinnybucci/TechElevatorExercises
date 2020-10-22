@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Text;
 using System.Transactions;
 
@@ -15,16 +16,36 @@ namespace ProjectOrganizerTests
 
         [TestInitialize]
         public void Initialize()
-        { }
-        [TestCleanup]
-        public void Cleanup()
         {
-            transaction.Dispose();
+            transaction = new TransactionScope();
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlCommand cmd = new SqlCommand("Select count(*) From department:", connection);
+
+                cmd = new SqlCommand("INSERT INTO department (name) VALUES ('Test 1');", connection);
+                cmd.ExecuteNonQuery();
+            }
+            }
+            [TestCleanup]
+            public void Cleanup()
+            {
+                transaction.Dispose();
+            }
+            [TestMethod]
+            public void GetAllEmployeesTest()
+            {
+
+            }
+        [TestMethod]
+        public void SearchTest()
+        {
+
         }
         [TestMethod]
-        public void GetAllEmployeesTest()
+        public void GetEmployeesWithoutProjectsTest()
         {
 
         }
     }
-}
+    }

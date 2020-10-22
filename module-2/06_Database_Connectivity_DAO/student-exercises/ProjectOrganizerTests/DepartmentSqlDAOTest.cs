@@ -59,7 +59,10 @@ namespace ProjectOrganizerTests
         public void UpdateDepartmentTest()
         {
             DepartmentSqlDAO departmentSqlDAO = new DepartmentSqlDAO(connectionString);
-
+            Department department = new Department();
+            department.Id = 1;
+            department.Name = "Update";
+            Assert.AreEqual("Update", department.Name);
         }
 
     }
