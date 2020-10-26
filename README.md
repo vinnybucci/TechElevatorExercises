@@ -1,1 +1,2 @@
-# Welcome to TechElevator Cohort 7!
+# Welcome to TechElevator
+Pittsburgh Cohort 7!
