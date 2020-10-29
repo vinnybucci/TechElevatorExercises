@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using AuctionApp.Models;
 using AuctionApp.DAO;
 using System.Reflection.Metadata;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace AuctionApp.Controllers
 {
@@ -23,38 +24,47 @@ namespace AuctionApp.Controllers
                 dao = auctionDao;
             }
         }
-        
+
+        [HttpGet]
+        public List<Auction> SearchTitle(string title_like = "", double currentBid_lte = 0)
+        {
+            if (currentBid_lte > 0 && title_like != "")
+            {
+                return dao.SearchByTitleAndPrice(title_like, currentBid_lte);
+            }
+            else if (title_like != "")
+            {
+                return dao.SearchByTitle(title_like);
+
+            }
+            else if (currentBid_lte > 0)
+            {
+
+                return dao.SearchByPrice(currentBid_lte);
+            }
+            else
+            {
+            return dao.List();
+            }
+        }
+
+        [HttpPost]
+        public Auction PostAuctions(Auction auction)
+        {
+            Auction output = dao.Create(auction);
+            return output;
+        }
+
         [HttpGet("{id}")]
         public Auction GetAuctionsId(int id)
         {
             Auction auction = dao.Get(id);
             if (auction != null)
             {
-            return auction;
+                return auction;
 
             }
             return null;
-        }
-        [HttpGet]
-        public List<Auction> SearchTitle(string title_like = "")
-        {
-            List<Auction> output = dao.SearchByTitle(title_like);
-            return output;
-            
-
-        }
-        //[HttpGet]
-        //public List<Auction> SearchPrice(double currentBid_lte = 0)
-        //{
-        //    List<Auction> output = dao.SearchByPrice(currentBid_lte);
-        //    return output;
-
-        //}
-        [HttpPost]
-        public Auction PostAuctions(Auction auction)
-        {
-            Auction output = dao.Create(auction);
-            return output;
         }
 
     }
