@@ -2,6 +2,7 @@
 using RestSharp.Authenticators;
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 namespace AuctionApp
 {
@@ -149,14 +150,14 @@ namespace AuctionApp
             }
             else if (!response.IsSuccessful)
             {
-                if (response.Content == null)
+                if (response.StatusCode.Equals(HttpStatusCode.Unauthorized))
                 {
-                    return UNAUTHORIZED_MSG + (int)response.StatusCode;
+                    return UNAUTHORIZED_MSG;
 
                 }
-                else if (response.Content == null)
+                else if (response.StatusCode.Equals(HttpStatusCode.Forbidden))
                 {
-                    return FORBIDDEN_MSG + (int)response.StatusCode;
+                    return FORBIDDEN_MSG;
                 }
                 
                 return OTHER_4XX_MSG + (int)response.StatusCode;
