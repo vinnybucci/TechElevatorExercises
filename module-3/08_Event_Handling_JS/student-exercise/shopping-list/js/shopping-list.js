@@ -36,6 +36,57 @@ function displayGroceries() {
     ul.appendChild(li);
   });
 }
+document.addEventListener('DOMContentLoaded', () => {
 
-setPageTitle();
-displayGroceries();
+  setPageTitle();
+
+  displayGroceries();
+
+  let itemSelection = document.querySelectorAll('li');
+
+
+  itemSelection.forEach(item => {
+    item.addEventListener('click', event => {
+      if (item.className != 'completed') {
+        item.classList.add('completed');
+        item.querySelector('i').classList.add('completed');
+      }
+    });
+  });
+
+
+
+  itemSelection.forEach(item => {
+    item.addEventListener('dblclick', event => {
+      if (item.className == 'completed') {
+        item.classList.remove('completed');
+        item.querySelector('i').classList.remove('completed');
+      }
+    });
+  });
+
+
+  let markAll = document.getElementById('toggleAll');
+
+  markAll.addEventListener('click', event => {
+    event.stopPropagation();
+    itemSelection.forEach(grocery => {
+      if(allItemsIncomplete == true) {
+        grocery.classList.add('completed');
+        grocery.querySelector('i').classList.add('completed');
+      } else {
+        grocery.classList.remove('completed');
+        grocery.querySelector('i').classList.remove('completed');
+      }
+    });
+    allItemsIncomplete = !allItemsIncomplete;
+    if (!allItemsIncomplete) {
+      markAll.innerText = 'Mark All Incomplete';
+    } else {
+      markAll.innerText = 'Mark All Complete';
+    }
+  });
+
+});
+
+
