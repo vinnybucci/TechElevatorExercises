@@ -11,17 +11,24 @@
     </thead>
     <tbody>
       <tr>
-        <td><input type="text" id="firstNameFilter"/></td>
-        <td><input type="text" id="lastNameFilter"/></td>
-        <td><input type="text" id="usernameFilter"/></td>
-        <td><input type="text" id="emailFilter"/></td>
+        <td><input type="text" id="firstNameFilter" v-model.trim="filter.firstName"/></td>
+        <td><input type="text" id="lastNameFilter" v-model.trim="filter.lastName"/></td>
+        <td><input type="text" id="usernameFilter" v-model.trim="filter.username"></td>
+        <td><input type="text" id="emailFilter" v-model.trim="filter.emailAddress"/></td>
         <td>
-          <select id="statusFilter">
-            <option value="">Show All</option>
+           <select id="statusFilter" v-model="filter.status">           
+             <option value="">Show All</option>
             <option value="Active">Active</option>
             <option value="Disabled">Disabled</option>
           </select>
         </td>
+      </tr>
+        <tr v-for="user in filteredList" v-bind:key="user.id" v-bind:class="{'disabled':user.status == 'Disabled'}">
+        <td >{{user.firstName }} </td>
+        <td >{{user.lastName }} </td>
+        <td >{{user.username }} </td>
+        <td >{{user.emailAddress }} </td>
+        <td >{{user.status}} </td> 
       </tr>
       <!-- user listing goes here -->
     </tbody>
@@ -40,9 +47,49 @@ export default {
         { firstName: 'Ben', lastName: 'Carter', username: 'bcarter', emailAddress: 'bcarter@gmail.com', status: 'Active' },
         { firstName: 'Katie', lastName: 'Jackson', username: 'kjackson', emailAddress: 'kjackson@yahoo.com', status: 'Active' },
         { firstName: 'Mark', lastName: 'Smith', username: 'msmith', emailAddress: 'msmith@foo.com', status: 'Disabled' }
-      ]
+      ], 
+
+      filter: {
+        firstName: "",
+         lastName: "",
+          username: "",
+           emailAddress: "",
+            status: ""
+      }
     }
-  }
+  },
+  computed: {
+
+    filteredList() {
+      let newList = this.users;
+      if(this.filter.firstName) {
+        newList = newList.filter( user => 
+          user.firstName.toLowerCase().includes(this.filter.firstName.toLowerCase())
+        );
+      }
+      if(this.filter.lastName) {
+        newList = newList.filter( user => 
+          user.lastName.toLowerCase().includes(this.filter.lastName.toLowerCase())
+        );
+      }
+      if(this.filter.emailAddress) {
+        newList = newList.filter( user => 
+          user.emailAddress.toLowerCase().includes(this.filter.emailAddress.toLowerCase())
+        );
+      }
+      if(this.filter.status) {
+        newList = newList.filter( user => 
+          user.status.toLowerCase().includes(this.filter.status.toLowerCase())
+        );
+      }
+      if(this.filter.username) {
+        newList = newList.filter( user => 
+          user.username.toLowerCase().includes(this.filter.username.toLowerCase())
+        );
+      }
+      return newList;
+}
+} 
 }
 </script>
 
