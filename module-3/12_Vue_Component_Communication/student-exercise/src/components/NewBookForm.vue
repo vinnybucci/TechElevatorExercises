@@ -14,15 +14,15 @@
     >Hide Form</a>
 
     <form v-on:submit.prevent="addNewBook" v-if="showForm === true">
-      <div class="new-book-form">
+      <div class="title-input">
         <label for="title-input">Title:</label>
         <input id="title-input" type="text" v-model="newBook.title" />
       </div>
-      <div class="new-book-form">
+      <div class="author-input">
         <label for="author-input">Author:</label>
         <input id="author-input" type="text" v-model="newBook.author" />
       </div>
-      <div class="new-book-form">
+      <div class="isbn-input">
         <label for="isbn-input">ISBN:</label>
         <input id="isbn-input" type="text" v-model="newBook.isbn" />
       </div>
